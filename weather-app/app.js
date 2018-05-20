@@ -37,10 +37,10 @@ document.addEventListener('DOMContentLoaded', function() {
     $.ajax({
       url: apiUrl,
       success: function(forecast) {
-
-        $('#bar').css('display', 'block'); //display elements on success
-        $('#icon').css('display', 'block');
-        $('.switch').css('display', 'block');
+        $('#loader').fadeOut(500); //hide loader on success
+        $('#bar').fadeIn(1000); //display elements on success
+        $('#icon').fadeIn(1000);
+        $('.switch').fadeIn(1000);
 
         console.log(apiUrl);
         JSON.stringify(forecast);

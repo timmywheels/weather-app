@@ -21,6 +21,14 @@ body {
     transition: opacity 1s;
 }
 
+#loader {
+    list-style: none;
+    top: 50%;
+    position: absolute;
+    left: 50%;
+    margin: -20px;
+}
+
 #weatherReport {
     width: 400px;
     min-height: 300px;
