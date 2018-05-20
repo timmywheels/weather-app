@@ -67,7 +67,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         $('#description').text(forecast.weather[0].description); //set weather description
-        $('#icon').attr('src', forecast.weather[0].icon); //set weather icon
+
+        if ($('#icon').attr('src') === '') { //if api doesn't provide icon
+          $('#icon').css('display', 'none'); //then hide icon section
+          console.log('No:', forecast.weather[0].icon)
+        }
+        else {
+          $('#icon').attr('src', forecast.weather[0].icon); //otherwise set weather icon
+          console.log('Yes:', forecast.weather[0].icon)
+        }
+
+
 
 
       }
