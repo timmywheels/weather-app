@@ -1,3 +1,3 @@
 # Weather App
 
-A weather app using the [Dark Sky API](https://darksky.net/)
+A weather app using the [freeCodeCamp Weather API](https://fcc-weather-api.glitch.me );
