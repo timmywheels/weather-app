@@ -6,11 +6,7 @@ var api = 'https://fcc-weather-api.glitch.me/api/current?';
 var lat;
 var lon;
 
-var notice = document.getElementById('notice');
-// var startLat = document.getElementById('startLat');
-// var startLon = document.getElementById('startLon');
-// var description = document.getElementById('description');
-
+var title = document.getElementById('title');
 
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -21,13 +17,12 @@ document.addEventListener('DOMContentLoaded', function() {
         lat = "lat=" + position.coords.latitude;
         lon = "lon=" + position.coords.longitude;
         api += lat + '&' + lon;
-        // console.log(api);
         getWeather(lat, lon);
       });
 
     }
     else {
-      notice.innerHTML = "Geolocation is not supported by this browser.";
+      title.innerHTML = "Geolocation is not supported by this browser.";
     }
   }
 
@@ -68,19 +63,74 @@ document.addEventListener('DOMContentLoaded', function() {
 
         $('#description').text(forecast.weather[0].description); //set weather description
 
-        if ($('#icon').attr('src') === '') { //if api doesn't provide icon
-          $('#icon').css('display', 'none'); //then hide icon section
-          console.log('No:', forecast.weather[0].icon)
-        }
-        else {
-          $('#icon').attr('src', forecast.weather[0].icon); //otherwise set weather icon
-          console.log('Yes:', forecast.weather[0].icon)
+        if (forecast.weather[0].hasOwnProperty('icon')) { //otherwise set weather icon
+          $('#icon').attr('src', forecast.weather[0].icon);
         }
 
+        else if (typeof forecast.weather[1] === 'undefined') {
+          $('#icon').attr('src', './icons/00.png');
+        }
 
-
-
+        // else if (forecast.weather[1].hasOwnProperty('icon')) {
+        if (forecast.weather[1].icon === '01d') {
+          $('#icon').attr('src', './icons/01d.png');
+        }
+        if (forecast.weather[1].icon === '01n') {
+          $('#icon').attr('src', './icons/01n.png');
+        }
+        if (forecast.weather[1].icon === '02d') {
+          $('#icon').attr('src', './icons/02d.png');
+        }
+        if (forecast.weather[1].icon === '02n') {
+          $('#icon').attr('src', './icons/02n.png');
+        }
+        if (forecast.weather[1].icon === '03d') {
+          $('#icon').attr('src', './icons/03d.png');
+        }
+        if (forecast.weather[1].icon === '03n') {
+          $('#icon').attr('src', './icons/03n.png');
+        }
+        if (forecast.weather[1].icon === '04d') {
+          $('#icon').attr('src', './icons/04d.png');
+        }
+        if (forecast.weather[1].icon === '04n') {
+          $('#icon').attr('src', './icons/04n.png');
+        }
+        if (forecast.weather[1].icon === '09d') {
+          $('#icon').attr('src', './icons/09d.png');
+        }
+        if (forecast.weather[1].icon === '09n') {
+          $('#icon').attr('src', './icons/09n.png');
+        }
+        if (forecast.weather[1].icon === '10d') {
+          $('#icon').attr('src', './icons/10d.png');
+        }
+        if (forecast.weather[1].icon === '10n') {
+          $('#icon').attr('src', './icons/10n.png');
+        }
+        if (forecast.weather[1].icon === '11d') {
+          $('#icon').attr('src', './icons/11d.png');
+        }
+        if (forecast.weather[1].icon === '11n') {
+          $('#icon').attr('src', './icons/11n.png');
+        }
+        if (forecast.weather[1].icon === '13d') {
+          $('#icon').attr('src', './icons/13d.png');
+        }
+        if (forecast.weather[1].icon === '13n') {
+          $('#icon').attr('src', './icons/13n.png');
+        }
+        if (forecast.weather[1].icon === '50d') {
+          $('#icon').attr('src', './icons/50d.png');
+        }
+        if (forecast.weather[1].icon === '50n') {
+          $('#icon').attr('src', './icons/50n.png');
+        }
+        else if ($('#icon').attr('src') === '') {
+          $('#icon').css('display', 'none');
+        }
       }
+      // }
     });
   }
 
