@@ -21,9 +21,7 @@ body {
     transition: opacity 1s;
 }
 
-.logo-section{
-
-}
+.logo-section {}
 
 #loader {
     list-style: none;
