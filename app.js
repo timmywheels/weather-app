@@ -66,14 +66,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
         $('#description').text(forecast.weather[0].description); //set weather description
 
-        if (forecast.weather[0].hasOwnProperty('icon')) { //otherwise set weather icon
+        if (forecast.weather[0].hasOwnProperty('icon')) { //if forecast object contains icon url, use it
           $('#icon').attr('src', forecast.weather[0].icon);
         }
 
-        else if (typeof forecast.weather[1] === 'undefined') {
+        else if (typeof forecast.weather[1] === 'undefined') { //if it doesn't have icon url, or icon code display default img
           $('#icon').attr('src', './icons/00.png');
         }
-        else if (forecast.weather[1].icon === '01d') {
+        else if (forecast.weather[1].icon === '01d') { //if it has icon code, display corresponding image
           $('#icon').attr('src', './icons/01d.png');
         }
         else if (forecast.weather[1].icon === '01n') {
