@@ -12,7 +12,7 @@ body {
     position: absolute;
     bottom: 0%;
     left: 50%;
-    margin: 50px -25px;
+    margin: 0 -25px;
 }
 
 .logo:hover {
