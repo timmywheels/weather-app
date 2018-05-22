@@ -1,0 +1,50 @@
+<!-- Modified -->
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Weather App | TimWheeler.com</title>
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,400,700" rel="stylesheet">
+		<link rel="stylesheet" href="style.css" type="text/css" />
+		<link rel="stylesheet" href="wave.css" type="text/css" />
+	</head>
+
+	<body>
+		<div id="weatherReport" class="box">
+
+			<div class='wave -one'></div>
+			<div class='wave -two'></div>
+			<div class='wave -three'></div>
+
+			<li id="loader">
+				<img src="grid.svg" width="40" alt="">
+			</li>
+
+			<p id="title"></p>
+			<!-- <hr id="bar" /> -->
+			<h1 id="city"></h1>
+			<img id="icon" src="">
+			<p id="description"></p>
+			<p id="temp"></p>
+
+
+
+			<label class="switch">
+  				<input id="tempSwitch" type="checkbox" checked>
+  				<span class="slider round"></span>
+			</label>
+		</div>
+		<div class="logo-section">
+			<a href="https://timwheeler.com" rel="noopener" target="_blank">
+				<img class="logo" src="https://timwheeler.com/wp-content/uploads/2017/11/tw-logo-white.svg" alt="TW Logo">
+			</a>
+		</div>
+
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="app.js"></script>
+	</body>
+
+</html>
